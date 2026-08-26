@@ -1,0 +1,486 @@
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f7fb;
+    color: #1f2937;
+    line-height: 1.6;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    color: white;
+    padding: 30px 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+}
+
+.header-content {
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.header-icon {
+    font-size: 48px;
+    color: #bfdbfe;
+}
+
+header h1 {
+    font-size: 30px;
+    margin-bottom: 3px;
+}
+
+header p {
+    color: #dbeafe;
+    font-size: 15px;
+}
+
+
+/* =========================
+   CONTENU PRINCIPAL
+========================= */
+
+main {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.conteneur-principal {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+
+/* =========================
+   CARD
+========================= */
+
+.card {
+    background: white;
+    border-radius: 18px;
+    padding: 28px;
+    box-shadow: 0 8px 25px rgba(15, 23, 42, 0.08);
+    border: 1px solid #e5e7eb;
+}
+
+.card:hover {
+    box-shadow: 0 12px 30px rgba(15, 23, 42, 0.12);
+    transform: translateY(-2px);
+    transition: 0.25s ease;
+}
+
+
+/* =========================
+   TITRE DES SECTIONS
+========================= */
+
+.section-title {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.icon-title {
+    width: 55px;
+    height: 55px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+}
+
+.section-title h2 {
+    font-size: 21px;
+    color: #111827;
+}
+
+.section-title p {
+    color: #6b7280;
+    font-size: 14px;
+}
+
+
+/* =========================
+   ICON METEO
+========================= */
+
+.weather-icon {
+    background: #dbeafe;
+    color: #2563eb;
+}
+
+
+/* =========================
+   ICON PAIEMENT
+========================= */
+
+.payment-icon {
+    background: #dcfce7;
+    color: #16a34a;
+}
+
+
+/* =========================
+   FORMULAIRE
+========================= */
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    color: #374151;
+}
+
+.form-group label i {
+    margin-right: 7px;
+    color: #2563eb;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+    padding: 13px 14px;
+    font-size: 15px;
+    outline: none;
+    background: #f9fafb;
+    transition: 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #2563eb;
+    background: white;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.form-group textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+
+/* =========================
+   MONTANT
+========================= */
+
+.input-money {
+    position: relative;
+}
+
+.input-money input {
+    padding-right: 60px;
+}
+
+.input-money span {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-weight: bold;
+    color: #6b7280;
+}
+
+
+/* =========================
+   BOUTONS
+========================= */
+
+.btn {
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    padding: 14px 18px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    color: white;
+    transition: 0.25s ease;
+}
+
+.btn i {
+    margin-right: 8px;
+}
+
+.btn-weather {
+    background: linear-gradient(135deg, #2563eb, #3b82f6);
+}
+
+.btn-weather:hover {
+    background: linear-gradient(135deg, #1d4ed8, #2563eb);
+    transform: translateY(-1px);
+}
+
+.btn-payment {
+    background: linear-gradient(135deg, #16a34a, #22c55e);
+}
+
+.btn-payment:hover {
+    background: linear-gradient(135deg, #15803d, #16a34a);
+    transform: translateY(-1px);
+}
+
+
+/* =========================
+   RESULTAT METEO
+========================= */
+
+.weather-result {
+    margin-top: 25px;
+    padding: 25px 15px;
+    background: #eff6ff;
+    border-radius: 14px;
+    text-align: center;
+    color: #4b5563;
+    border: 1px solid #dbeafe;
+}
+
+.weather-large-icon {
+    font-size: 45px;
+    color: #3b82f6;
+    margin-bottom: 10px;
+}
+
+.weather-result p {
+    font-size: 14px;
+}
+
+
+/* =========================
+   MESSAGE PAIEMENT
+========================= */
+
+#message {
+    margin-top: 15px;
+    text-align: center;
+    font-weight: 600;
+}
+
+
+/* =========================
+   WHATSAPP
+========================= */
+
+.contact {
+    margin-top: 25px;
+    background: linear-gradient(135deg, #ecfdf5, #f0fdf4);
+    border: 1px solid #bbf7d0;
+}
+
+.contact-content {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.whatsapp-icon {
+    width: 60px;
+    height: 60px;
+    min-width: 60px;
+    border-radius: 50%;
+    background: #25d366;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+}
+
+.contact-text {
+    flex: 1;
+}
+
+.contact-text h2 {
+    color: #166534;
+    font-size: 20px;
+}
+
+.contact-text p {
+    color: #4b5563;
+    font-size: 14px;
+}
+
+.whatsapp-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #25d366;
+    color: white;
+    text-decoration: none;
+    padding: 13px 20px;
+    border-radius: 10px;
+    font-weight: 700;
+    transition: 0.25s ease;
+}
+
+.whatsapp-button:hover {
+    background: #1ebe5d;
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    text-align: center;
+    padding: 25px 20px;
+    color: #6b7280;
+    font-size: 14px;
+}
+
+footer i {
+    margin-right: 5px;
+}
+
+
+/* =========================
+   RESPONSIVE TABLETTE
+========================= */
+
+@media (max-width: 800px) {
+
+    .conteneur-principal {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-content {
+        flex-wrap: wrap;
+    }
+
+    .contact-text {
+        min-width: 200px;
+    }
+
+    .whatsapp-button {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+
+/* =========================
+   RESPONSIVE MOBILE
+========================= */
+
+@media (max-width: 500px) {
+
+    header {
+        padding: 22px 15px;
+    }
+
+    .header-content {
+        gap: 12px;
+    }
+
+    .header-icon {
+        font-size: 36px;
+    }
+
+    header h1 {
+        font-size: 22px;
+    }
+
+    header p {
+        font-size: 13px;
+    }
+
+    main {
+        margin: 25px auto;
+        padding: 0 12px;
+    }
+
+    .card {
+        padding: 20px 16px;
+        border-radius: 14px;
+    }
+
+    .section-title {
+        gap: 12px;
+    }
+
+    .icon-title {
+        width: 48px;
+        height: 48px;
+        font-size: 21px;
+    }
+
+    .section-title h2 {
+        font-size: 18px;
+    }
+
+    .section-title p {
+        font-size: 13px;
+    }
+
+    .contact-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .contact-text {
+        width: 100%;
+    }
+
+    .whatsapp-button {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+
+/* =========================
+   ANIMATION
+========================= */
+
+@keyframes apparition {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card {
+    animation: apparition 0.5s ease;
+}
+
+
+/* =========================
+   SELECTION TEXTE
+========================= */
+
+::selection {
+    background: #2563eb;
+    color: white;
+}
