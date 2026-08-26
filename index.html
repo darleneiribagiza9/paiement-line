@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Paiement & Services</title>
+
+    <!-- CSS personnel -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+
+    <header>
+
+        <div class="header-content">
+
+            <i class="fa-solid fa-globe header-icon"></i>
+
+            <div>
+                <h1>Paiement & Services</h1>
+
+                <p>
+                    Une plateforme simple pour vos services
+                </p>
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================
+         CONTENU PRINCIPAL
+    ========================== -->
+
+    <main>
+
+        <div class="conteneur-principal">
+
+
+            <!-- =====================
+                 METEO
+            ====================== -->
+
+            <section class="card meteo">
+
+                <div class="section-title">
+
+                    <div class="icon-title weather-icon">
+                        <i class="fa-solid fa-cloud-sun"></i>
+                    </div>
+
+                    <div>
+                        <h2>Consulter la météo</h2>
+
+                        <p>
+                            Découvrez la météo d'une ville
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="ville">
+                        <i class="fa-solid fa-location-dot"></i>
+                        Ville
+                    </label>
+
+                    <input type="text" id="ville" placeholder="Exemple : Bujumbura">
+
+                </div>
+
+
+                <button type="button" id="btnMeteo" class="btn btn-weather">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                    Consulter la météo
+
+                </button>
+
+
+                <!-- Résultat météo -->
+
+                <div id="weatherResult" class="weather-result">
+
+                    <i class="fa-solid fa-cloud-sun weather-large-icon"></i>
+
+                    <p>
+                        Entrez une ville pour consulter
+                        la météo.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =====================
+                 PAIEMENT
+            ====================== -->
+
+            <section class="card paiement">
+
+                <div class="section-title">
+
+                    <div class="icon-title payment-icon">
+
+                        <i class="fa-solid fa-credit-card"></i>
+
+                    </div>
+
+                    <div>
+
+                        <h2>Formulaire de paiement</h2>
+
+                        <p>
+                            Remplissez les informations
+                            ci-dessous
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <form id="paymentForm">
+
+
+                    <!-- Nom -->
+
+                    <div class="form-group">
+
+                        <label for="nom">
+
+                            <i class="fa-solid fa-user"></i>
+
+                            Nom complet
+
+                        </label>
+
+                        <input type="text" id="nom" placeholder="Entrez votre nom" required>
+
+                    </div>
+
+
+                    <!-- Téléphone -->
+
+                    <div class="form-group">
+
+                        <label for="telephone">
+
+                            <i class="fa-solid fa-phone"></i>
+
+                            Numéro de téléphone
+
+                        </label>
+
+                        <input type="tel" id="telephone" placeholder="Exemple : 79 12 34 56" required>
+
+                    </div>
+
+
+                    <!-- Montant -->
+
+                    <div class="form-group">
+
+                        <label for="montant">
+
+                            <i class="fa-solid fa-money-bill-wave"></i>
+
+                            Montant
+
+                        </label>
+
+                        <div class="input-money">
+
+                            <input type="number" id="montant" placeholder="Entrez le montant" min="1" required>
+
+                            <span>BIF</span>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Description -->
+
+                    <div class="form-group">
+
+                        <label for="description">
+
+                            <i class="fa-solid fa-comment"></i>
+
+                            Description
+
+                        </label>
+
+                        <textarea id="description" placeholder="Motif du paiement"></textarea>
+
+                    </div>
+
+
+                    <!-- Bouton -->
+
+                    <button type="submit" class="btn btn-payment">
+
+                        <i class="fa-solid fa-lock"></i>
+
+                        Payer
+
+                    </button>
+
+                </form>
+
+
+                <!-- Message JavaScript -->
+
+                <p id="message"></p>
+
+            </section>
+
+        </div>
+
+
+
+        <!-- =========================
+             WHATSAPP
+        ========================== -->
+
+        <section class="card contact">
+
+            <div class="contact-content">
+
+                <div class="whatsapp-icon">
+
+                    <i class="fa-brands fa-whatsapp"></i>
+
+                </div>
+
+
+                <div class="contact-text">
+
+                    <h2>Besoin d'aide ?</h2>
+
+                    <p>
+                        Contactez-nous directement
+                        sur WhatsApp.
+                    </p>
+
+                </div>
+
+
+                <a id="whatsappLink" href="#" target="_blank" class="whatsapp-button">
+
+                    <i class="fa-brands fa-whatsapp"></i>
+
+                    Contacter sur WhatsApp
+
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <p>
+            <i class="fa-regular fa-copyright"></i>
+
+            2026 - Paiement & Services
+
+        </p>
+
+    </footer>
+
+
+    <!-- JavaScript -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
