@@ -1,6 +1,6 @@
-// ======================================================
-// FORMULAIRE DE PAIEMENT
-// ======================================================
+
+
+const GOOGLE_SCRIPT_URL = " https://script.google.com/macros/s/AKfycbzjFKwy2Th5nuuuYeyC9SwwZFLTSO3oORCqrJw-VqFNOmPdKYU_0Q4BCAx5hKunjl5cLQ/exec";
 
 const paymentForm = document.getElementById("paymentForm");
 const message = document.getElementById("message");
@@ -17,6 +17,26 @@ paymentForm.addEventListener("submit", function (event) {
     const montant = document.getElementById("montant").value;
     const description =
         document.getElementById("description").value.trim();
+fetch(GOOGLE_SCRIPT_URL, {
+    method: "POST",
+    body: JSON.stringify({
+        nom: nom,
+        telephone: telephone,
+        montant: montant,
+        description: description
+    })
+})
+.then(response => response.json())
+.then(data => {
+
+    console.log("Google Sheets :", data);
+
+})
+.catch(error => {
+
+    console.error("Erreur Google Sheets :", error);
+
+});
 
 
     // Vérification simple
@@ -49,7 +69,6 @@ paymentForm.addEventListener("submit", function (event) {
     paymentForm.reset();
 
 });
-
 
 // ======================================================
 // WHATSAPP
@@ -342,3 +361,91 @@ btnMeteo.addEventListener("click", async function () {
     }
 
 });
+// ======================================================
+// PAYS - API COUNTRIES.DEV
+// ======================================================
+
+const paysSelect = document.getElementById("pays");
+
+async function chargerPays() {
+
+    try {
+
+        const response = await fetch(
+            "https://countries.dev/countries"
+        );
+
+        if (!response.ok) {
+            throw new Error(
+                "Erreur HTTP : " + response.status
+            );
+        }
+
+        const donnees = await response.json();
+
+        console.log("Données reçues :", donnees);
+
+        // Récupérer la liste des pays
+        const pays = donnees.data || donnees;
+
+        // Trier par ordre alphabétique
+        pays.sort((a, b) =>
+            a.name.localeCompare(b.name, "fr")
+        );
+
+        // Vider la liste
+        paysSelect.innerHTML = "";
+
+        // Première option
+        const optionDefaut =
+            document.createElement("option");
+
+        optionDefaut.value = "";
+        optionDefaut.textContent =
+            "Sélectionnez votre pays";
+
+        paysSelect.appendChild(optionDefaut);
+
+
+        // Ajouter les pays
+        pays.forEach(pays => {
+
+            const option =
+                document.createElement("option");
+
+            option.value = pays.code;
+
+            option.textContent = pays.name;
+
+            paysSelect.appendChild(option);
+
+        });
+
+    } catch (error) {
+
+        console.error(
+            "Erreur API pays :",
+            error
+        );
+
+        paysSelect.innerHTML = "";
+
+        const option =
+            document.createElement("option");
+
+        option.value = "";
+
+        option.textContent =
+            "Impossible de charger les pays";
+
+        paysSelect.appendChild(option);
+
+    }
+
+}
+
+
+// Charger les pays au démarrage
+chargerPays();
+
+
